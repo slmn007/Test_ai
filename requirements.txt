@@ -1,0 +1,5 @@
+flask
+cmake
+face_recognition
+gunicorn
+tensorflow-cpu
