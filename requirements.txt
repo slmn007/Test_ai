@@ -3,3 +3,5 @@ cmake
 face_recognition
 gunicorn
 tensorflow-cpu
+numpy
+opencv-python
