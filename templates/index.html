@@ -207,9 +207,25 @@
                     <div class="col-lg-12 col-md-12 col-12 mb-4">
                       <div class="card">
                         <div class="card-body">
-                          <span class="fw-semibold d-block mb-1">Review Singkat Algoritma Deteksi</span>
+                          <span class="fw-semibold d-block mb-1">Klasifikasi Penggunaan Masker pada Wajah</span>
                           <div>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe soluta non explicabo iste inventore odit et voluptatem ea voluptatum fuga. Possimus asperiores eos hic nobis! Doloremque magnam quae ea cumque.
+                            Aplikasi ini terdiri dari dua tahapan utama, yaitu deteksi lokasi wajah dan klasifikasi penggunaan masker pada wajah yang telah terdeteksi.
+
+                            Tahapan deteksi lokasi wajah menggunakan modul 'face recognition' yang didapatkan dari https://pypi.org/project/face-recognition/. Pada modul ini diperoleh lokasi wajah pada suatu citra, yaitu koordinat kotak deteksi (top, left, bottom, right).
+
+                            Tahapan klasifikasi akan mengklasifikasikan wajah yang terdeteksi dari tahapan pertama, menjadi 3 buah kelas, antara lain: penggunaan masker penuh (hijau), penggunaan masker tidak penuh (kuning), dan tanpa menggunakan masker (merah).
+                            
+                            Tahapan klasifikasi ini menggunakan arsitekur Convolutional Neural Network yang terdiri dari:
+                            1. Konvolusi ; jumlah kernel : 128, ukuran kernel : 3 x 3
+                            2. MaxPooling ; stride : 2
+                            3. Konvolusi ; jumlah kernel : 64, ukuran kernel : 3 x 3
+                            4. MaxPooling ; stride : 2
+                            5. Konvolusi ; jumlah kernel : 32, ukuran kernel : 3 x 3
+                            6. MaxPooling ; stride : 2
+                            7. Konvolusi ; jumlah kernel : 16, ukuran kernel : 3 x 3
+                            8. MaxPooling ; stride : 2
+                            9. Konvolusi ; jumlah kernel : 8, ukuran kernel : 3 x 3
+                            10. FC layer ; 8 neuron
                           </div>
                         </div>
                       </div>
