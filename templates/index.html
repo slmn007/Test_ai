@@ -185,7 +185,36 @@
                         <h5 class="card-header m-0 me-2 pb-3">
                           Arahkan wajah Anda ke kamera
                         </h5>
-                        <img src="{{ url_for('video') }}" style="width:100%;height:450px;object-fit:cover" />
+                        <img src="{{ url_for('video') }}" style="width:100%;height:450px;object-fit:cover">
+                        <h5 class="card-header m-0 me-2 pb-3">
+                          Klasifikasi Penggunaan Masker pada Wajah
+                        </h5>
+                        <span>
+                        Aplikasi ini terdiri dari dua tahapan utama, yaitu deteksi lokasi wajah dan klasifikasi 
+                        penggunaan masker pada wajah yang telah terdeteksi.<br><br>
+
+                        Tahapan deteksi lokasi wajah menggunakan modul 'face recognition' yang didapatkan dari 
+                        https://pypi.org/project/face-recognition/. Pada modul ini diperoleh lokasi wajah pada 
+                        suatu citra, yaitu koordinat kotak deteksi (top, left, bottom, right).<br><br>
+
+                        Tahapan klasifikasi akan mengklasifikasikan wajah yang terdeteksi dari tahapan pertama, 
+                        menjadi 3 buah kelas, antara lain: penggunaan masker penuh (hijau), penggunaan masker 
+                        tidak penuh (kuning), dan tanpa menggunakan masker (merah).<br><br>
+                        
+                        Tahapan klasifikasi ini menggunakan arsitekur Convolutional Neural Network yang terdiri dari:<br>
+                        <ol>
+                          <li>Konvolusi ; jumlah kernel : 128, ukuran kernel : 3 x 3</li>
+                          <li>MaxPooling ; stride : 2</li>
+                          <li>Konvolusi ; jumlah kernel : 64, ukuran kernel : 3 x 3</li>
+                          <li>MaxPooling ; stride : 2</li>
+                          <li>Konvolusi ; jumlah kernel : 32, ukuran kernel : 3 x 3</li>
+                          <li>MaxPooling ; stride : 2</li>
+                          <li>Konvolusi ; jumlah kernel : 16, ukuran kernel : 3 x 3</li>
+                          <li>MaxPooling ; stride : 2</li>
+                          <li>Konvolusi ; jumlah kernel : 8, ukuran kernel : 3 x 3</li>
+                          <li>FC layer ; 8 neuron</li>
+                        </ol>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -207,31 +236,13 @@
                     <div class="col-lg-12 col-md-12 col-12 mb-4">
                       <div class="card">
                         <div class="card-body">
-                          <span class="fw-semibold d-block mb-1">Klasifikasi Penggunaan Masker pada Wajah</span>
-                          <div>
-                            Aplikasi ini terdiri dari dua tahapan utama, yaitu deteksi lokasi wajah dan klasifikasi 
-                            penggunaan masker pada wajah yang telah terdeteksi.<br>
-
-                            Tahapan deteksi lokasi wajah menggunakan modul 'face recognition' yang didapatkan dari 
-                            https://pypi.org/project/face-recognition/. Pada modul ini diperoleh lokasi wajah pada 
-                            suatu citra, yaitu koordinat kotak deteksi (top, left, bottom, right).<br>
-
-                            Tahapan klasifikasi akan mengklasifikasikan wajah yang terdeteksi dari tahapan pertama, 
-                            menjadi 3 buah kelas, antara lain: penggunaan masker penuh (hijau), penggunaan masker 
-                            tidak penuh (kuning), dan tanpa menggunakan masker (merah).<br>
-                            
-                            Tahapan klasifikasi ini menggunakan arsitekur Convolutional Neural Network yang terdiri dari:<br>
-                            1. Konvolusi ; jumlah kernel : 128, ukuran kernel : 3 x 3<br>
-                            2. MaxPooling ; stride : 2<br>
-                            3. Konvolusi ; jumlah kernel : 64, ukuran kernel : 3 x 3<br>
-                            4. MaxPooling ; stride : 2<br>
-                            5. Konvolusi ; jumlah kernel : 32, ukuran kernel : 3 x 3<br>
-                            6. MaxPooling ; stride : 2<br>
-                            7. Konvolusi ; jumlah kernel : 16, ukuran kernel : 3 x 3<br>
-                            8. MaxPooling ; stride : 2<br>
-                            9. Konvolusi ; jumlah kernel : 8, ukuran kernel : 3 x 3<br>
-                            10. FC layer ; 8 neuron
-                          </div>
+                          <span class="fw-semibold d-block mb-1">Created By:</span>
+                          <ol>
+                            <li>Dr. Indah Agustien Siradjuddin, S. Kom., M. Kom</li>
+                            <li>Mochammad Miftahul Huda Firmansyah</li>
+                            <li>Robby Alamsyah</li>
+                            <li>Sulaiman</li>
+                          </ol>
                         </div>
                       </div>
                     </div>
